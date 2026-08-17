@@ -1,44 +1,52 @@
 ---
 name: laosan-niulai-vision
-description: Transform a supplied image into an original rough, abstract, low-poly rural-surreal visual built from oversized angular planes and primitive sculptural forms while preserving essential subject identity and composition. Use for stylizing portraits, animals, objects, or scenes; do not use for polished 3D rendering, exact restoration, faithful brand reproduction, or claims of official film affiliation.
+description: Transform a supplied image into an original uncanny rural low-budget CGI frame with primitive geometry, stretched low-resolution textures, stiff posing, flat theatrical lighting, and preserved subject identity and composition. Use for stylizing portraits, animals, objects, or scenes; do not use for polished 3D rendering, exact restoration, faithful brand reproduction, or claims of official film affiliation.
 ---
 
 # LaoSan NiuLai Vision
 
-Turn a reference image into a rough, abstract geometric interpretation with a rural-surreal atmosphere. Favor primitive sculptural mass, blunt polygon cuts, visible irregularity, and handmade incompleteness over polished low-poly rendering.
+Turn a reference image into an uncanny rural low-budget CGI frame. The defining roughness should come from crude modeling, awkward rigging, low-resolution texture mapping, flat lighting, and simple compositing—not from turning the subject into a clay or stone sculpture.
 
 ## Workflow
 
-1. Inspect the source before editing. Identify the subject, silhouette, pose, camera angle, composition, lighting direction, important colors, and identity-defining details.
-2. Separate invariants from stylization freedom:
-   - Preserve the subject count, placement, pose, key proportions, recognizable facial or object features, and any explicit user constraints.
-   - Simplify secondary texture, background detail, and material transitions into deliberate polygonal planes.
-3. Choose a transformation strength:
-   - `light`: preserve recognition while replacing smooth surfaces with broad, uneven planes.
-   - `rough`: oversized facets, blunt proportions, primitive sculptural mass, and visibly coarse material. Use this by default.
-   - `extreme`: severe geometric reduction and stronger surreal distortion; keep only the core silhouette, subject count, pose, and key identity anchors.
-4. Build the image prompt from the source analysis and the selected strength. Read [references/style-system.md](references/style-system.md) for visual decisions and failure corrections.
-5. Generate or edit the image with the available image tool. For edits, pass the actual source image rather than describing it from memory.
-6. Review the output against the preservation checklist. If a retry is needed, correct the specific failure instead of increasing every style attribute.
+1. Inspect the source. Identify subject count, silhouette, pose, camera angle, crop, setting, dominant colors, and 3–5 identity anchors.
+2. Lock invariants before stylizing: keep subject count, placement, pose, core silhouette, identity anchors, and explicit user constraints.
+3. Choose a strength:
+   - `light`: source-faithful composition with mild primitive modeling and texture degradation.
+   - `scene`: obvious low-budget CGI, awkward anatomy, coarse texture maps, stiff staging, and flat theatrical light. Use this by default.
+   - `uncanny`: stronger proportion distortion, rigid expression, simplified scenery, and degraded rendering while retaining the core silhouette and identity anchors.
+4. Read [references/style-system.md](references/style-system.md) before building the prompt. Diagnose by layer instead of adding generic “roughness.”
+5. Edit with the actual source image. Do not reconstruct the source from memory.
+6. Review the result. Correct only the failing layer: model, texture, rig/pose, light, environment, or image finish.
 
 ## Preservation Checklist
 
 - Same number and type of primary subjects
-- Recognizable silhouette, pose, expression, and identity cues
+- Recognizable silhouette, pose, expression, and 3–5 identity anchors
 - Composition and crop remain close unless the user requested a change
-- Important costume, fur, product, or prop colors remain traceable
+- Important fur, costume, product, or prop colors remain traceable
 - No invented text, logos, limbs, accessories, or background subjects
-- Requested size, aspect ratio, and transparency are honored
+- Requested aspect ratio, dimensions, and transparency are honored
 
 ## Prompt Construction
 
-Describe what must remain before describing the style. Require oversized faceted planes, hard angular breaks, crude asymmetry, primitive carved mass, sparse facial detail, coarse matte surfaces, restrained earth colors, and flat or hazy cinematic light. Explicitly reject smooth skin, fine topology, glossy materials, cute stylization, polished 3D, photorealism, and commercial animation rendering. Avoid relying on a film title or another creator's name as the only style instruction.
+State preservation constraints first. Then describe the result across six layers:
 
-Do not promise pixel-perfect preservation from a generative edit. When exact product graphics, typography, or logos must remain unchanged, state that a compositing or manual retouching workflow may be required.
+1. primitive early-CGI mesh with a low vertex count and coarse smooth shading;
+2. low-resolution stretched or slightly misregistered texture map;
+3. stiff rigging, fixed gaze, and limited facial deformation;
+4. flat ambient light with blunt highlights and weak contact shadows;
+5. simplified rural stage-set environment made from repeated primitive forms;
+6. soft low-resolution image finish with restrained grain, aliasing, and compression.
+
+Use “uncanny,” “naive,” “stiff,” and “low-budget” as structural qualities. A low vertex count must not become a mosaic of visible micro-facets: prefer broad rounded silhouettes, crude Gouraud-like shading, and texture-driven detail. Explicitly reject polished animation, physically based materials, clean topology, beauty lighting, detailed fur, clay sculpture, and stone carving. Do not rely on a film title or creator name as the only style instruction.
+
+Do not promise pixel-perfect preservation. Exact typography, logos, and product graphics may require compositing or manual retouching.
 
 ## Boundaries
 
-- Produce original visual interpretation; do not copy another repository's prompt text or present the work as an official film asset.
+- Produce an original interpretation; do not reproduce a specific frame, character design, dialogue, subtitle, or film asset.
+- Do not present results as official film material or imply affiliation.
 - Do not remove watermarks or ownership marks.
 - Do not identify a real person from an image.
-- Keep user-provided constraints above the default style system.
+- Keep user constraints above the default style system.

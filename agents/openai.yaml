@@ -1,8 +1,8 @@
 interface:
   display_name: "LaoSan NiuLai Vision"
-  short_description: "将参考图转译为粗粝抽象的乡土几何视觉"
-  brand_color: "#8B5E3C"
-  default_prompt: "Use $laosan-niulai-vision to rebuild this image with rough oversized geometry, primitive sculptural mass, and visible handmade imperfection while preserving its essential subject and composition."
+  short_description: "将参考图转译为诡异粗粝的乡野低成本 CGI"
+  brand_color: "#A56A23"
+  default_prompt: "Use $laosan-niulai-vision to rebuild this image as an uncanny rural low-budget CGI frame with a low-vertex rounded mesh, crude Gouraud-like shading, coarse stretched texture maps, stiff posing, and flat theatrical light while preserving the essential subject and composition."
 
 policy:
   allow_implicit_invocation: true
