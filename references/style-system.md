@@ -1,73 +1,92 @@
 # Visual Style System
 
-Use this reference when composing the image prompt or diagnosing an unsatisfactory result.
+This system describes an original rural low-budget CGI language. Apply it as rendering decisions, not as a named-film imitation.
 
-## Core Visual Language
+## Layer Checklist
 
-### Geometry
+### 1. Model and Proportion
 
-- Reduce forms into a small number of oversized, blunt polygonal masses.
-- Use visibly uneven plane sizes, hard breaks, crude asymmetry, and occasional awkward proportions.
-- Prefer primitive carving and folded-paper mass over clean mesh topology.
-- Keep the geometry intentionally coarse; avoid decorative micro-faceting and tidy subdivision.
-- Preserve the outer contour and identity-defining landmarks.
-- Let facial features become sparse structural marks: wedge-like nose, recessed eye planes, blocky cheek and jaw masses.
+- Build the subject from simple early-CGI meshes with a low vertex count and broad rounded masses.
+- Use crude Gouraud-like smooth shading across the mesh. Let the low vertex count show mainly in the silhouette, joints, and proportion—not as hundreds of differently colored facets.
+- Prefer blunt cylinders, inflated torsos, wedge-like noses, mitten hands or paws, and visibly simplified joints.
+- Allow naive asymmetry and slightly incorrect anatomy: large head, short limbs, thick neck, wide-set or uneven eyes.
+- Keep the silhouette and 3–5 identity anchors readable.
+- Avoid both extremes: no polished character topology and no hard-edged clay-block sculpture.
 
-### Material
+### 2. Face and Expression
 
-- Favor raw clay, chipped plaster, dry mud, roughly cut wood, coarse cloth, dusty fur, and unfinished stone-like surfaces.
-- Allow uneven color fields, blunt edges, and restrained surface abrasion.
-- Keep highlights sparse and dull. Avoid polished plastic, clean bevels, smooth skin, subsurface scattering, or studio-perfect materials unless the source object absolutely requires them.
+- Treat eyes, lips, nostrils, brows, and markings as sparse applied features on a simple head volume.
+- Use fixed or slightly misaligned gaze, limited eyelid deformation, stiff mouth shapes, and restrained expression.
+- Preserve the source expression in simplified form; do not automatically make every subject cute, angry, or human-like.
+- For animals, preserve species anatomy unless the source or user requests anthropomorphism.
 
-### Color
+### 3. Texture Mapping
 
-- Start from the source palette, then compress it toward warm soil, faded straw, charcoal, muted green, fog blue, or oxidized red.
-- Use one controlled accent color when the source contains a strong identifying hue.
-- Keep shadows colored and cinematic rather than pure black.
+- The main signature is coarse texture mapping, not surface damage.
+- Use visibly low-resolution fur, skin, fabric, bark, grass, and rock maps with soft pixels and uneven scale.
+- Allow mild stretching around cheeks, shoulders, joints, and curved forms; slight seam or registration imperfections are useful.
+- Markings may look stamped, tiled, or painted onto the geometry.
+- Keep surfaces mostly matte with simple color response.
+- Avoid detailed procedural fur, micro-cracks, heavy plaster relief, glossy PBR materials, and realistic subsurface skin.
 
-### Light and Atmosphere
+### 4. Color
 
-- Prefer flat overcast light, hard low-angle light, dusty haze, or simple theatrical illumination.
-- Separate the subject from the background with value contrast or a thin rim light.
-- Preserve readable facial planes and avoid crushing the image into darkness.
+- Preserve identifying source colors, then compress them into a small palette.
+- Favor bold artificial color blocks: mustard yellow, oxidized orange-red, dark bottle green, muddy brown, charcoal, dull blue, and off-white.
+- Permit strong subject/background separation and slightly dirty saturation.
+- Avoid refined cinematic teal-orange grading or tasteful desaturation that makes the result look premium.
 
-### Composition
+### 5. Light and Render
 
-- Maintain the source camera angle, crop, subject placement, and visual hierarchy by default.
-- Simplify the background into a few large masses with depth layers.
-- Use negative space deliberately; do not fill empty areas with invented props.
+- Use flat ambient illumination with one broad directional source.
+- Highlights should be blunt and simple; shadows should be shallow, soft, or weakly attached.
+- Allow slightly inconsistent light between subject and background if the composite remains readable.
+- Maintain visible midtones. Do not crush the face into darkness.
+- Avoid beauty lighting, glossy rim lights, volumetric spectacle, ray-traced realism, and studio-perfect contact shadows.
+
+### 6. Environment and Composition
+
+- Preserve the source crop, camera height, subject placement, and visual hierarchy by default.
+- Rebuild backgrounds as naive stage sets: flat ground, painted or gradient sky, repeated lollipop-like trees, simple rock walls, dark shrubs, and sparse props only when supported by the source.
+- Use primitive repeated foliage and obvious texture reuse rather than detailed natural scenery.
+- Favor frontal medium shots, centered confrontation, simple shot/reverse-shot staging, or source-faithful framing.
+- Do not invent film-specific characters, scenery, captions, or narrative events.
+
+### 7. Image Finish
+
+- Finish as an older digital render or compressed game cutscene: modest resolution, soft edges, restrained aliasing, faint grain, and mild compression.
+- Texture detail should soften before silhouette readability is lost.
+- Black side mattes, subtitles, scanlines, or timestamp artifacts are optional only when explicitly requested; never add them by default.
 
 ## Strength Profiles
 
 ### Light
 
-Subtle planar simplification, source-faithful colors, gentle cinematic grading, minimal background abstraction.
+Mostly faithful proportions and color, with primitive modeling, mildly coarse maps, simplified background, and subtle digital softness.
 
-### Rough — Default
+### Scene — Default
 
-Oversized blunt planes, crude asymmetry, primitive sculptural anatomy, compressed earthy palette, raw matte materials, and restrained cinematic atmosphere. Recognition comes from silhouette and a few identity anchors rather than detailed modeling.
+Rounded low-poly anatomy, awkward rigging, fixed gaze, visible low-resolution texture maps, artificial color blocks, flat theatrical light, naive rural stage-set scenery, and restrained compressed-video finish.
 
-### Extreme
+### Uncanny
 
-Severe geometric reduction, deliberately awkward massing, sparse surreal environment, and only essential identity anchors. Preserve subject count, pose, and core silhouette.
+More distorted proportions, rigid expression, stronger texture stretching, reduced scenery, obvious model/lighting mismatch, and greater digital degradation. Preserve subject count, pose, silhouette, and identity anchors.
 
 ## Reusable Prompt Frame
 
-Adapt this frame to the actual image instead of copying it verbatim:
-
-> Edit the supplied image. Preserve [subjects, count, pose, core silhouette, essential identity anchors, composition, crop, key colors]. Rebuild it as [strength] rough geometric sculpture using a very small number of oversized angular planes, blunt edges, crude asymmetry, awkward primitive proportions, sparse facial marks, and raw matte material. Use [palette] and [simple lighting]. Simplify the background into [large depth layers]. It must feel abstract, coarse, handmade, and slightly unfinished—not like polished low-poly 3D. Avoid smooth skin, fine topology, glossy materials, clean bevels, photorealism, cute character rendering, and commercial animation aesthetics. Do not add [likely unwanted elements]. Output [aspect ratio, dimensions, transparency].
+> Edit the supplied image. Preserve [subject count, pose, silhouette, 3–5 identity anchors, crop, composition, key colors]. Rebuild it at [strength] as an uncanny rural low-budget CGI frame: primitive early-CGI mesh with a low vertex count, broad rounded silhouette and crude Gouraud-like shading; naive proportions; stiff rigging and gaze; sparse facial deformation; low-resolution texture maps stretched over simple geometry; flat ambient light; blunt highlights; weak contact shadows; simplified stage-set background; and restrained old-digital softness. Keep the result recognizable but structurally awkward and inexpensive-looking. Avoid visible micro-faceting, mosaic-like polygon shading, polished animation, clean topology, detailed fur, physically based materials, beauty lighting, photorealism, clay sculpture, stone carving, invented characters, text, logos, and props.
 
 ## Failure Corrections
 
 | Failure | Targeted correction |
 | --- | --- |
-| Subject no longer resembles the source | Reduce abstraction on the face or key landmarks; restate identity cues and silhouette first |
-| Image is too dark | Lift midtones, soften contrast, retain warm fill light, keep facial planes readable |
-| Surface is too rough | Remove micro-texture and cracks; use larger matte planes with smoother value transitions |
-| Looks too polished or beautiful | Remove clean bevels and smooth gradients; enlarge the planes, distort their spacing, dull the material, and introduce blunt asymmetry |
-| Looks like generic 3D | Reduce mesh sophistication; use primitive carved masses, raw rural material cues, flat light, and compressed color |
-| Too many polygons | Cut the plane count aggressively; merge facial and body surfaces into oversized blocks |
-| Still not abstract enough | Preserve only silhouette, pose, subject count, and 3–5 identity anchors; rebuild everything else as crude geometric mass |
-| Background overwhelms subject | Reduce background detail, lower contrast, and restore subject-background value separation |
-| Extra objects appear | Explicitly preserve subject count and prohibit invented props or figures |
-| Product details drift | Reduce transformation strength around logos, proportions, edges, and functional parts |
+| Looks like a clay or plaster sculpture | Remove relief, cracks, and carved edges; restore smooth primitive volumes with flat low-resolution maps |
+| Looks like polished low-poly art | Simplify the rig and lighting; lower texture resolution; weaken contact shadows; add mild map stretching and fixed gaze |
+| Too faceted | Stop rendering individual polygons as colored tiles; use broad rounded silhouettes, crude Gouraud-like shading, and texture-driven detail |
+| Too photoreal | Remove detailed fur/skin and PBR response; flatten light and reduce material complexity |
+| Too cute or commercial | Reduce eye sparkle and facial animation; use stiff mouth shapes, neutral gaze, naive anatomy, and dirty saturation |
+| Not uncanny enough | Introduce slight proportion error, gaze misalignment, texture-scale mismatch, and subject/background lighting mismatch |
+| Subject no longer resembles source | Restore silhouette, pose, key markings, gaze, and 3–5 identity anchors; reduce distortion elsewhere |
+| Background overwhelms subject | Reduce it to flat ground, simple sky, and a few repeated primitive masses |
+| Too dark | Lift midtones and use flat ambient fill while keeping simple directional shading |
+| Extra content appears | Restate exact subject count and prohibit invented characters, captions, props, and scenery |
