@@ -16,7 +16,7 @@
 ## 安装
 
 ```bash
-git clone https://github.com/zhanglaosanexd-hub/LaoSan-NiuLai-Vision.git
+git clone https://github.com/zhanglaosanexd-hub/LaoSan-NiuLaiVision-Skill.git
 ```
 
 也可以下载 ZIP 后，将文件夹放入支持 Skills 的客户端目录中。
@@ -35,7 +35,7 @@ git clone https://github.com/zhanglaosanexd-hub/LaoSan-NiuLai-Vision.git
 ## 目录
 
 ```text
-LaoSan-NiuLai-Vision/
+LaoSan-NiuLaiVision-Skill/
 ├── SKILL.md
 ├── agents/
 │   └── openai.yaml
