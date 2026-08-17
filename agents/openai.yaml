@@ -1,0 +1,8 @@
+interface:
+  display_name: "LaoSan NiuLai Vision"
+  short_description: "将参考图转译为原创低多边形乡土电影视觉"
+  brand_color: "#8B5E3C"
+  default_prompt: "Use $laosan-niulai-vision to transform this image with balanced abstraction while preserving its subject and composition."
+
+policy:
+  allow_implicit_invocation: true
